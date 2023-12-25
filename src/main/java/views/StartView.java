@@ -45,12 +45,12 @@ public class StartView {
 
         register.setOnMouseClicked(event -> {
             userAuth();
-            WindowManager.change(register, "/views/container-view.fxml", Configuration.WindowTitle.main, "Some data");
+            WindowManager.change(register, "/views/container-view.fxml", Configuration.WindowTitle.main, "Start data, e.g. UserID");
         });
 
         login.setOnMouseClicked(event -> {
             userAuth();
-            WindowManager.change(register, "/views/container-view.fxml", Configuration.WindowTitle.main, "Some data");
+            WindowManager.change(register, "/views/container-view.fxml", Configuration.WindowTitle.main, "Start data, e.g. UserID");
         });
     }
 

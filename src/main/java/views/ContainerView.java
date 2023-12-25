@@ -1,26 +1,31 @@
 package views;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import util.FragmentManager;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class ContainerView {
     @FXML private VBox container;
 
-    private Map<String, Object> state = new HashMap<>();
+    @FXML private Button home;
+    @FXML private Button second;
 
     public void init(Object startData) {
-        // To work with fragments go to "/app/Configuration"
-
-        // Can set initial value to state
-        state.put("start_data", startData);
-
-        FragmentManager.injectFields(container, this, state);
+        FragmentManager.injectFields(container, this);
+        handleEvents();
 
         // Change fragment to HomeFragment
         FragmentManager.change("home");
+    }
+
+    private void handleEvents() {
+        home.setOnMouseClicked(event -> {
+            FragmentManager.change("home");
+        });
+
+        second.setOnMouseClicked(event -> {
+            FragmentManager.change("second");
+        });
     }
 }

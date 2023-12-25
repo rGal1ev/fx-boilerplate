@@ -12,12 +12,10 @@ import java.util.Map;
 public class FragmentManager {
     private static VBox container;
     private static ContainerView containerViewController;
-    private static Map<String, Object> state;
 
-    public static void injectFields(VBox injectableContainer, ContainerView injectableController, Map<String, Object> injectableState) {
+    public static void injectFields(VBox injectableContainer, ContainerView injectableController) {
         container = injectableContainer;
         containerViewController = injectableController;
-        state = injectableState;
     }
 
     public static void change(String name) {
@@ -27,8 +25,8 @@ public class FragmentManager {
         loadFragment(fragmentPath);
     }
 
-    public static Map<String, Object> getState() {
-        return state;
+    public static ContainerView getContainerViewController() {
+        return containerViewController;
     }
 
     private static void loadFragment(String path) {

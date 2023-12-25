@@ -3,6 +3,8 @@ package util;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import views.ContainerView;
 
@@ -14,11 +16,15 @@ public class WindowManager {
         Stage rootStage = (Stage) node.getScene().getWindow();
 
         try {
-            Scene scene = new Scene(fxmlLoader.load());
+            BorderPane view = fxmlLoader.load();
+            Scene scene = new Scene(view);
             ContainerView containerView = fxmlLoader.getController();
             containerView.init(data);
 
             rootStage.setScene(scene);
+            rootStage.centerOnScreen();
+
+            rootStage.setResizable(true);
             rootStage.setTitle(title);
 
         } catch (IOException ignored) {}
