@@ -1,28 +1,16 @@
 package fragments;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-
+import models.User;
 import util.*;
 
 public class HomeFragment {
-    @FXML private Button changeFragment;
-    @FXML private TextField field;
-
     @FXML
     private void initialize() {
-        // Change fragment to SecondFragment
-        changeFragment.setOnMouseClicked(event -> {
-            FragmentManager.change("second");
-        });
+        // Retrieving User from state
+        User user = (User) StateManager.get("user");
 
-        // Handle state
-        String fieldState = (String) StateManager.get("field");
-        field.setText(fieldState);
-
-        field.textProperty().addListener((options, oldValue, newValue) -> {
-            StateManager.update("field", newValue);
-        });
+        // Can change fragment within the fragment by FragmentManager.change("name")
+        // Can access root container by FragmentManager.getContainerViewController()
     }
 }

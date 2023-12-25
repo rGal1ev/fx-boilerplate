@@ -11,7 +11,8 @@ public class ContainerView {
     @FXML private Button home;
     @FXML private Button second;
 
-    public void init(Object startData) {
+    @FXML
+    private void initialize() {
         FragmentManager.injectFields(container, this);
         handleEvents();
 
@@ -20,12 +21,7 @@ public class ContainerView {
     }
 
     private void handleEvents() {
-        home.setOnMouseClicked(event -> {
-            FragmentManager.change("home");
-        });
-
-        second.setOnMouseClicked(event -> {
-            FragmentManager.change("second");
-        });
+        home.setOnMouseClicked(event -> FragmentManager.change("home"));
+        second.setOnMouseClicked(event -> FragmentManager.change("second"));
     }
 }

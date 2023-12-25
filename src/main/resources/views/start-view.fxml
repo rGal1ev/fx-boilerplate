@@ -18,18 +18,19 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
+            <Label fx:id="message" />
             <VBox fx:id="loginContainer" alignment="CENTER" fillWidth="false" prefWidth="100.0" spacing="10.0" style="-fx-managed: false;" visible="false" VBox.vgrow="NEVER">
                <children>
                   <VBox alignment="CENTER_LEFT" VBox.vgrow="NEVER">
                      <children>
                         <Label text="Логин" />
-                        <TextField prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER" />
+                        <TextField fx:id="authLogin" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER_LEFT" layoutX="210.0" layoutY="10.0">
                      <children>
                         <Label text="Пароль" />
-                        <TextField prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER" />
+                        <TextField fx:id="authPassword" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER" />
                      </children>
                   </VBox>
                   <Button fx:id="login" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Войти" />
@@ -49,19 +50,13 @@
                   <VBox alignment="CENTER_LEFT" VBox.vgrow="NEVER">
                      <children>
                         <Label text="Логин" />
-                        <TextField prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER" />
+                        <TextField fx:id="regLogin" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER_LEFT" layoutX="210.0" layoutY="10.0">
                      <children>
                         <Label text="Пароль" />
-                        <TextField prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER" />
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER_LEFT" layoutX="210.0" layoutY="62.0">
-                     <children>
-                        <Label text="Повторите пароль" />
-                        <TextField prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER" />
+                        <TextField fx:id="regPassword" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER" />
                      </children>
                   </VBox>
                   <Button fx:id="register" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Зарегистрироваться" />

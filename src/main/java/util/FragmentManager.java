@@ -7,7 +7,8 @@ import javafx.scene.layout.VBox;
 import views.ContainerView;
 
 import java.io.IOException;
-import java.util.Map;
+
+// To manage fragments go-to /app/configuration
 
 public class FragmentManager {
     private static VBox container;
