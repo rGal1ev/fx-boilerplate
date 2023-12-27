@@ -4,14 +4,11 @@ import app.Configuration;
 import models.User;
 import java.sql.*;
 
-// SQLite Java hints -> https://www.tutorialspoint.com/sqlite/sqlite_java.htm
-// All methods is void, change state to share data with fragments
+// SQLite Java ->
+// https://www.tutorialspoint.com/sqlite/sqlite_java.htm
 
 public class DBManager {
-    // CRUD
-    public static void makeSomeData() {}
 
-    // Registration-Auth
     public static void authUser(String login, String password) {
         Connection _conn;
         Statement _statement;
@@ -73,8 +70,6 @@ public class DBManager {
         }
     }
 
-
-    // Tables initialization
     public static void initTables() {
         Connection _conn;
         Statement _statement;

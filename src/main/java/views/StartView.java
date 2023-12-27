@@ -18,13 +18,10 @@ import util.WindowManager;
 public class StartView {
     @FXML private VBox loginContainer;
     @FXML private VBox regContainer;
-
     @FXML private Label showRegistration;
     @FXML private Button register;
-
     @FXML private Button showLogin;
     @FXML private Button login;
-
     @FXML private Label message;
 
     private final BooleanProperty isRegistering = new SimpleBooleanProperty(false);
@@ -71,7 +68,7 @@ public class StartView {
 
         DBManager.authUser(login.getText(), password.getText());
         if (((User) StateManager.get("user")).getID() != -1) {
-            WindowManager.change(register, "/views/container-view.fxml", Configuration.WindowTitle.main);
+            WindowManager.change(register, "main", Configuration.WindowTitle.main);
             return;
         }
 
@@ -91,6 +88,6 @@ public class StartView {
             return;
         }
 
-        messageHint.set("Ошибка при регистрации");
+        messageHint.set("Выбранный логин уже используется");
     }
 }

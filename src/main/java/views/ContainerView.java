@@ -7,21 +7,17 @@ import util.FragmentManager;
 
 public class ContainerView {
     @FXML private VBox container;
-
     @FXML private Button home;
-    @FXML private Button second;
 
     @FXML
     private void initialize() {
         FragmentManager.injectFields(container, this);
-        handleEvents();
-
-        // Change fragment to HomeFragment
         FragmentManager.change("home");
+
+        handleEvents();
     }
 
     private void handleEvents() {
         home.setOnMouseClicked(event -> FragmentManager.change("home"));
-        second.setOnMouseClicked(event -> FragmentManager.change("second"));
     }
 }

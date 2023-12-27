@@ -8,8 +8,6 @@ import views.ContainerView;
 
 import java.io.IOException;
 
-// To manage fragments go-to /app/configuration
-
 public class FragmentManager {
     private static VBox container;
     private static ContainerView containerViewController;

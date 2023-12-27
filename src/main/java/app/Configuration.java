@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-// App configuration
-
 public class Configuration {
     public static class Database {
         public static String driver = "jdbc:sqlite:";
@@ -22,8 +20,6 @@ public class Configuration {
                             PASSWORD TEXT NOT NULL
                         );
                         """);
-
-                // tableSQLs.add(""" CREATE ... """);
             }
         }
     }
@@ -38,9 +34,15 @@ public class Configuration {
 
         static {
             fragments.put("home", "/fragments/home-fragment.fxml");
-            fragments.put("second", "/fragments/second-fragment.fxml");
+        }
+    }
 
-            // fragments.put("my-fragment", "/path/to/fragment.fxml");
+    public static class Windows {
+        public static Map<String, String> windows = new HashMap<>();
+
+        static {
+            windows.put("start", "/views/start-view.fxml");
+            windows.put("main", "/views/container-view.fxml");
         }
     }
 }

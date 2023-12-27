@@ -21,7 +21,6 @@
          <children>
             <Label text="Navigation" />
             <Button fx:id="home" mnemonicParsing="false" text="Home" />
-            <Button fx:id="second" layoutX="61.0" layoutY="199.0" mnemonicParsing="false" text="Second" />
          </children>
       </VBox>
    </left>
