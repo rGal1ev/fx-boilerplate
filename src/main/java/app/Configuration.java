@@ -29,20 +29,12 @@ public class Configuration {
         public static String main = "Main window";
     }
 
-    public static class Fragments {
-        public static Map<String, String> fragments = new HashMap<>();
-
-        static {
-            fragments.put("home", "/fragments/home-fragment.fxml");
-        }
-    }
-
     public static class Windows {
         public static Map<String, String> windows = new HashMap<>();
 
         static {
             windows.put("start", "/views/start-view.fxml");
-            windows.put("main", "/views/container-view.fxml");
+            windows.put("main", "/views/main-view.fxml");
         }
     }
 }

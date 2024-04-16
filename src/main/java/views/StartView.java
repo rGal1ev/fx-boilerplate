@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import models.User;
 import util.DBManager;
-import util.StateManager;
+import util.State;
 import util.WindowManager;
 
 public class StartView {
@@ -29,8 +29,6 @@ public class StartView {
 
     @FXML
     private void initialize() {
-        DBManager.initTables();
-
         handleProperties();
         handleEvents();
     }
@@ -67,7 +65,7 @@ public class StartView {
         TextField password = (TextField) loginContainer.lookup("#authPassword");
 
         DBManager.authUser(login.getText(), password.getText());
-        if (((User) StateManager.get("user")).getID() != -1) {
+        if (((User) State.get("user")).getID() != -1) {
             WindowManager.change(register, "main", Configuration.WindowTitle.main);
             return;
         }
@@ -80,7 +78,7 @@ public class StartView {
         TextField password = (TextField) regContainer.lookup("#regPassword");
 
         DBManager.createUser(login.getText(), password.getText());
-        if ((boolean) StateManager.get("user_registered")) {
+        if ((boolean) State.get("user_registered")) {
             isRegistering.set(false);
 
             login.setText("");
